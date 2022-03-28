@@ -394,7 +394,9 @@
 												<td th:text="${#temporals.format(m.cpEnddate, 'yyyy-MM-dd')}"></td>
 												<td th:text="${m.cpStartdate}"></td>
 												<td th:text="${m.cpLimitprice}"></td>
-												<td th:text="${m.cpStatus}"></td>
+												<td th:if="${m.getCpStatus.toString().equals('REGISTERED')}" th:text="사용가능" >결제확인 </td>
+												<td th:if="${m.getCpStatus.toString().equals('UNREGISTERED')}" th:text="사용불가" >결제확인 </td>
+
 												<td th:text="${m.userIdx}"></td>
 											</tr>
 											</tbody>
@@ -415,7 +417,7 @@
 				<div class="nano has-scrollbar" style="height: 719px;"><div class="nano-content" tabindex="0" style="right: -15px;"><div class="menubar-scroll-panel" style="padding-bottom: 50px;">
 					<div class="tabled full-width">
 
-						<div>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/admin/logout"><img th:src="@{/image/power-off.png}"><span style="font-size: 14px;">&nbsp;&nbsp;관리자 로그아웃</span></a></div>
+						<div>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/admin/logout"><img th:src="@{/image/power-off.png}" style="margin-left: 9px"><span style="font-size: 13px;">&nbsp;&nbsp; &nbsp;&nbsp;관리자 로그아웃</span></a></div>
 						<ul class="dropdown-menu global_setting animation-dock menu-card-styling">					<li class="holder ">
 							<a href="/admin/?type=page&amp;_ga=2.254642240.996359343.1645365816-1966519718.1645110617">
 								<div class="tabled">
@@ -435,9 +437,6 @@
 							<li class="border-top"><a href="javascript:;" onclick="SITE_MANAGE.openAddUnit('S20220127201b2696461e8')" class="text-primary" style="padding-top: 15px;"></a></li></ul>		</div>
 					<ul id="main-menu" class="gui-controls"><li class="  " data-title="preview"><a href="https://www.duoback.co.kr/duobacke" target="_blank"><div class="gui-icon"><i class="db-preview"></i></div><span class="title title_controls">사이트 바로가기</span></a></li>
 						<li class="spacer"></li>
-						<li class="active expanded expanding" data-title="dashboard"><a th:href="@{/admin/dashboard}" class=" active">
-							<div class="gui-icon"><i class="db-dashboard"></i></div>
-							<span class="title title_controls">대시보드</span></a></li>
 
 						<li class="gui-folder" data-title="member"><a href="/admin/member" class="sidebar-nav-menu" onclick="return false;">
 							<div class="gui-icon"><i class="db-user"></i></div>

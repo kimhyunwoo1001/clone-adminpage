@@ -581,8 +581,8 @@
 							</label>
 							<div class="col-md-9">
 								<strong>현재 주문 상태 : </strong><br>
-								<span th:if="${view.getOrderStatus().toString().equals('EXCHANGING')}" th:text="교환중" >결제확인 </span>
-								<span th:if="${view.getOrderStatus().toString().equals('EXCHANGED')}" th:text="교환완료" >결제확인 </span>
+								<span th:if="${view.getOrderStatus().toString().equals('RETURNING')}" th:text="환불중" >결제확인 </span>
+								<span th:if="${view.getOrderStatus().toString().equals('RETURNED')}" th:text="환불완료" >결제확인 </span>
 								<select th:value="${view.getOrderStatus()}" name="orderStatus" class="form-control"
 										id="orderStatus">
 									<option th:selected="${view.getOrderStatus()} =='PAY'" th:value="PAY" th:text="결제완료"></option>

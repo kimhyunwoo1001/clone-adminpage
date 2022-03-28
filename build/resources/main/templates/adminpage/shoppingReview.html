@@ -452,7 +452,7 @@
 <!--											<tr th:each="m : ${reviewList}" th:onclick="|location.href='@{|/admin/reviewview/${m.getRvIdx()}|}'|">-->
 												<td th:text="${m.rvIdx}"></td>
 												<td th:text="${m.userIdx}"></td>
-												<td th:text="${m.rvRegdate}"></td>
+												<td th:text="${#temporals.format(m.rvRegdate, 'yyyy-MM-dd')}"></td>
 												<td th:text="${m.rvTitle}"></td>
 												<td th:text="${m.rvContent}"></td>
 												<td th:text="${m.rvStar}"></td>
