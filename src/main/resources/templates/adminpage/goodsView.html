@@ -471,29 +471,29 @@
 			SADMIN_MENU_ALERT.openAlert();
 		});
 	</script>
-	<header class="top_header" id="header">
-		<div class="headerbar">
-			<div class="headerbar-left">
-				<ul class="header-nav header-nav-options">
-					<li class="hidden-lg hidden-md">
-						<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
-							<i class="btl bt-bars"></i>
-						</a>
-					</li>
-					<li class="header-nav-brand">
-						<div class="brand-holder">
-                        <span class="location_text">
-                           <a class="listLocation" th:href="@{/admin/management}">리스트로 이동</a>                  </span>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<!--끝 #header-navbar-collapse -->
-			<!--끝 #header-navbar-collapse -->
-		</div>
-	</header>
+<!--	<header class="top_header" id="header">-->
+<!--		<div class="headerbar">-->
+<!--			<div class="headerbar-left">-->
+<!--				<ul class="header-nav header-nav-options">-->
+<!--					<li class="hidden-lg hidden-md">-->
+<!--						<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">-->
+<!--							<i class="btl bt-bars"></i>-->
+<!--						</a>-->
+<!--					</li>-->
+<!--&lt;!&ndash;					<li class="header-nav-brand">&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="brand-holder">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="location_text">&ndash;&gt;-->
+<!--&lt;!&ndash;                           <a class="listLocation" th:href="@{/admin/management}">리스트로 이동</a>                  </span>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;					</li>&ndash;&gt;-->
+<!--				</ul>-->
+<!--			</div>-->
+<!--			&lt;!&ndash;끝 #header-navbar-collapse &ndash;&gt;-->
+<!--			&lt;!&ndash;끝 #header-navbar-collapse &ndash;&gt;-->
+<!--		</div>-->
+<!--	</header>-->
 	<!-- BEGIN CONTENT-->
-	<div id="content">
+	<div id="content" style="padding-top: 0;">
 		<section>
 			<div class="section-body">
 				<!-- default_type - js 처리용 -->
@@ -655,6 +655,9 @@
 								상품상태
 							</label>
 							<div class="col-md-9">
+								<strong>현재 상품 상태 : </strong><br>
+								<span th:if="${view.getData().getGdStatus().toString().equals('SELL')}" th:text="판매중" >결제확인 </span>
+								<span th:if="${view.getData().getGdStatus().toString().equals('SOLDOUT')}" th:text="품절" >결제확인 </span>
 								<select th:value="${view.getData().getGdStatus()}" name="gdStatus" class="form-control"
 										id="gdStatus">
 									<option th:selected="${view.getData().getGdStatus()} =='SELL'" th:value="SELL" th:text="판매중"></option>
@@ -1121,7 +1124,7 @@
 			<div class="menubar-scroll-panel" style="padding-bottom: 1px;">
 				<div class="tabled full-width">
 
-					<div>&nbsp;&nbsp;&nbsp;&nbsp;<a style="text-decoration: none; color:#fff;"href="/admin/logout"><img th:src="@{/image/power-off.png}"><span style="font-size: 14px;">&nbsp;&nbsp;관리자 로그아웃</span></a></div>
+					<div>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/admin/logout"><img th:src="@{/image/power-off.png}" style="margin-left: 5px"><span style="font-size: 13px;">&nbsp; &nbsp;&nbsp;관리자 로그아웃</span></a></div>
 					<ul class="dropdown-menu global_setting animation-dock menu-card-styling">
 						<li class="holder ">
 							<a href="/admin/?type=page&amp;_ga=2.254642240.996359343.1645365816-1966519718.1645110617">

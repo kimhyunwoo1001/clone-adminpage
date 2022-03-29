@@ -465,7 +465,9 @@
 
 			<div class="headerbar-right">
 				<ul class="header-nav header-nav-options _option_list">
-					<li class="hidden-xs"><a class="btn btn-primary" th:href="@{/admin/management_add}">상품 추가</a>
+<!--					<tr th:each="m : ${goodsList}" th:onclick="|window.open('@{|/admin/goodsview/${m.getGdIdx()}|}', '@{정보수정}','@{width=700px, height=800px}'); return false|">-->
+					<li class="hidden-xs"><a class="btn btn-primary" th:onclick="|window.open('@{|/admin/management_add|}', '@{정보수정}','@{width=700px, height=600px}'); return false|">상품 추가</a>
+<!--					<li class="hidden-xs"><a class="btn btn-primary" th:href="@{/admin/management_add}">상품 추가</a>-->
 					</li>
 					<li class="hidden-md hidden-lg hidden-sm">
 						<button class="btn btn-flat" aria-expanded="false" aria-haspopup="true"
@@ -573,7 +575,7 @@
 										</thead>
 
 										<tbody>
-										<tr th:each="m : ${goodsList}" th:onclick="|window.open('@{|/admin/goodsview/${m.getGdIdx()}|}', '@{정보수정}','@{width=850px, height=800px}'); return false|">
+										<tr th:each="m : ${goodsList}" th:onclick="|window.open('@{|/admin/goodsview/${m.getGdIdx()}|}', '@{정보수정}','@{width=700px, height=800px}'); return false|">
 <!--										<tr th:each="m : ${goodsList}" th:onclick="|location.href='@{|/admin/goodsview/${m.getGdIdx()}|}'|">-->
 											<td th:text="${m.gdIdx}"></td>
 											<td th:text="${m.gdName}"></td>
@@ -581,7 +583,8 @@
 											<td th:text="${m.gdBrand}"></td>
 											<td th:text="${m.gdCategory}"></td>
 											<td th:text="${m.gdCount}"></td>
-											<td th:text="${m.gdStatus}"></td>
+											<td th:if="${m.getGdStatus.toString().equals('SELL')}" th:text="판매중" >결제확인 </td>
+											<td th:if="${m.getGdStatus.toString().equals('SOLDEOUT')}" th:text="품절" >결제확인 </td>
 											<td th:text="${#temporals.format(m.gdRegdate, 'yyyy-MM-dd')}"></td>
 											<td><img th:src="${m.gdImg}" style="max-width: 200px ; max-height: 200px"></td>
 										</tr>
@@ -972,7 +975,7 @@
 			<div class="nano-content" tabindex="0" style="right: -15px;">
 				<div class="menubar-scroll-panel" style="padding-bottom: 50px;">
 					<div class="tabled full-width">
-						<div>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/admin/logout"><img th:src="@{/image/power-off.png}"><span style="font-size: 14px;">&nbsp;&nbsp;관리자 로그아웃</span></a></div>
+						<div>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/admin/logout"><img th:src="@{/image/power-off.png}" style="margin-left: 5px"><span style="font-size: 13px;">&nbsp; &nbsp;&nbsp;관리자 로그아웃</span></a></div>
 
 						<ul class="dropdown-menu global_setting animation-dock menu-card-styling">
 							<li class="holder ">
@@ -1007,12 +1010,6 @@
 								class="title title_controls">사이트 바로가기</span>
 						</a></li>
 						<li class="spacer"></li>
-						<li class=" " data-title="dashboard"><a th:href="@{/admin/dashboard}"
-																class="sidebar-nav-menu">
-							<div class="gui-icon"><i class="db-dashboard"></i></div>
-							<span class="title title_controls">대시보드</span>
-						</a></li>
-
 
 						<li class="gui-folder " data-title="member"><a href="/admin/member" class="sidebar-nav-menu"
 																	   onclick="return false;">
@@ -1051,8 +1048,7 @@
 										th:href="@{/admin/dpoint}"><span
 										class="title title_controls">D포인트 관리</span></a></li>
 								<li class="  " data-title="booking_config"><a
-										th:href="@{/admin/coupon}"><span class="title title_controls">쿠폰
-												관리</span></a></li>
+										th:href="@{/admin/coupon}"><span class="title title_controls">쿠폰관리</span></a></li>
 							</ul>
 						</li>
 						<li class="gui-folder" data-title="contents"><a href="/admin/contents"

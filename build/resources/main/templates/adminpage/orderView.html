@@ -469,29 +469,29 @@
 			SADMIN_MENU_ALERT.openAlert();
 		});
 	</script>
-	<header class="top_header" id="header">
-		<div class="headerbar">
-			<div class="headerbar-left">
-				<ul class="header-nav header-nav-options">
-					<li class="hidden-lg hidden-md">
-						<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
-							<i class="btl bt-bars"></i>
-						</a>
-					</li>
-					<li class="header-nav-brand">
-						<div class="brand-holder">
-                        <span class="location_text">
-                           <a th:href="@{/admin/order}">리스트로 이동</a>                  </span>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<!--끝 #header-navbar-collapse -->
-			<!--끝 #header-navbar-collapse -->
-		</div>
-	</header>
+<!--	<header class="top_header" id="header">-->
+<!--		<div class="headerbar">-->
+<!--			<div class="headerbar-left">-->
+<!--				<ul class="header-nav header-nav-options">-->
+<!--					<li class="hidden-lg hidden-md">-->
+<!--						<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">-->
+<!--							<i class="btl bt-bars"></i>-->
+<!--						</a>-->
+<!--					</li>-->
+<!--&lt;!&ndash;					<li class="header-nav-brand">&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="brand-holder">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span class="location_text">&ndash;&gt;-->
+<!--&lt;!&ndash;                           <a th:href="@{/admin/order}">리스트로 이동</a>                  </span>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;					</li>&ndash;&gt;-->
+<!--				</ul>-->
+<!--			</div>-->
+<!--			&lt;!&ndash;끝 #header-navbar-collapse &ndash;&gt;-->
+<!--			&lt;!&ndash;끝 #header-navbar-collapse &ndash;&gt;-->
+<!--		</div>-->
+<!--	</header>-->
 	<!-- BEGIN CONTENT-->
-	<div id="content">
+	<div id="content" style="padding-top: 0;">
 		<section>
 			<div class="section-body">
 
@@ -580,7 +580,10 @@
 							</label>
 							<div class="col-md-9">
 								<strong>현재 주문 상태 : </strong><br>
-								<span th:text="${view.getOrderStatus()}"></span>
+								<span th:if="${view.getOrderStatus().toString().equals('PAY')}" th:text="결제완료" >결제확인 </span>
+								<span th:if="${view.getOrderStatus().toString().equals('READY')}" th:text="배송준비중" >결제확인 </span>
+								<span th:if="${view.getOrderStatus().toString().equals('SEND')}" th:text="배송중" >결제확인 </span>
+								<span th:if="${view.getOrderStatus().toString().equals('FINISH')}" th:text="배송완료" >결제확인 </span>
 								<select th:value="${view.getOrderStatus()}" name="orderStatus" class="form-control"
 										id="orderStatus">
 									<option th:selected="${view.getOrderStatus()} =='PAY'" th:value="PAY" th:text="결제완료"></option>

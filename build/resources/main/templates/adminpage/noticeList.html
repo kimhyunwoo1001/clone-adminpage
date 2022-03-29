@@ -325,7 +325,9 @@
 
       <div class="headerbar-right">
         <ul class="header-nav header-nav-options _option_list">
-          <li class="hidden-xs"><a class="btn btn-primary" th:href="@{/admin/addnotice}">공지 작성</a></li>
+<!--          th:onclick="|location.href='@{|/admin/addnotice|}'|"-->
+<!--          <li class="hidden-xs"><a class="btn btn-primary" th:href="@{/admin/addnotice}">공지 작성</a></li>-->
+          <li class="hidden-xs"><a class="btn btn-primary" th:onclick="|window.open('@{|/admin/addnotice|}', '@{공지작성}','@{width=720px, height=490px}'); return false|">공지 작성</a></li>
           <li class="hidden-md hidden-lg hidden-sm">
             <button class="btn btn-flat" aria-expanded="false" aria-haspopup="true"
                     data-toggle="dropdown" type="button" id="dLabel" style="padding: 4px 8px;">
@@ -452,7 +454,7 @@
                     <tbody>
 <!--                    th:onclick="|window.open('@{|/admin/noticeview/${m.getNtIdx()}}', '@{정보수정}','@{width=850px, height=800px}'); return false|"-->
 <!--                    <tr th:each="m : ${noticeList}" th:onclick="|location.href='@{|/admin/noticeview/${m.getNtIdx()}|}'|">-->
-                    <tr th:each="m : ${noticeList}" th:onclick="|window.open('@{|/admin/noticeview/${m.getNtIdx()}}', '@{정보수정}','@{width=850px, height=800px}'); return false|">
+                    <tr th:each="m : ${noticeList}" th:onclick="|window.open('@{|/admin/noticeview/${m.getNtIdx()}}', '@{정보수정}','@{width=700px, height=800px}'); return false|">
                       <td th:text="${m.ntIdx}"></td>
                       <td th:text="${m.ntTitle}"></td>
                       <td th:text="${m.ntCategory}"></td>
