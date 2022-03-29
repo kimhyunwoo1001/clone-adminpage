@@ -465,7 +465,9 @@
 
 			<div class="headerbar-right">
 				<ul class="header-nav header-nav-options _option_list">
-					<li class="hidden-xs"><a class="btn btn-primary" th:href="@{/admin/management_add}">상품 추가</a>
+<!--					<tr th:each="m : ${goodsList}" th:onclick="|window.open('@{|/admin/goodsview/${m.getGdIdx()}|}', '@{정보수정}','@{width=700px, height=800px}'); return false|">-->
+					<li class="hidden-xs"><a class="btn btn-primary" th:onclick="|window.open('@{|/admin/management_add|}', '@{정보수정}','@{width=700px, height=600px}'); return false|">상품 추가</a>
+<!--					<li class="hidden-xs"><a class="btn btn-primary" th:href="@{/admin/management_add}">상품 추가</a>-->
 					</li>
 					<li class="hidden-md hidden-lg hidden-sm">
 						<button class="btn btn-flat" aria-expanded="false" aria-haspopup="true"
@@ -573,7 +575,7 @@
 										</thead>
 
 										<tbody>
-										<tr th:each="m : ${goodsList}" th:onclick="|window.open('@{|/admin/goodsview/${m.getGdIdx()}|}', '@{정보수정}','@{width=850px, height=800px}'); return false|">
+										<tr th:each="m : ${goodsList}" th:onclick="|window.open('@{|/admin/goodsview/${m.getGdIdx()}|}', '@{정보수정}','@{width=700px, height=800px}'); return false|">
 <!--										<tr th:each="m : ${goodsList}" th:onclick="|location.href='@{|/admin/goodsview/${m.getGdIdx()}|}'|">-->
 											<td th:text="${m.gdIdx}"></td>
 											<td th:text="${m.gdName}"></td>

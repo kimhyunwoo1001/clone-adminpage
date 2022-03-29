@@ -423,7 +423,7 @@
 											<tbody>
 
 <!--											<tr th:each="m : ${cancelList}" th:onclick="|location.href='@{|/admin/cancelview/${m.getOrderIdx()}|}'|">-->
-											<tr th:each="m : ${cancelList}" th:onclick="|window.open('@{|/admin/cancelview/${m.getOrderIdx()}|}', '@{정보수정}','@{width=850px, height=800px}'); return false|">
+											<tr th:each="m : ${cancelList}" th:onclick="|window.open('@{|/admin/cancelview/${m.getOrderIdx()}|}', '@{정보수정}','@{width=700px, height=850px}'); return false|">
 												<td th:text="${m.orderIdx}"></td>
 												<td th:text="${m.userIdx}"></td>
 												<td th:text="${m.orderNum}"></td>

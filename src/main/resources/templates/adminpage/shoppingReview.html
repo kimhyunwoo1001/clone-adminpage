@@ -448,7 +448,7 @@
 
 											<tbody>
 <!--											th:onclick="|window.open('@{|/admin/couponview/${m.getCpIdx()}|}', '@{정보수정}','@{width=850px, height=800px}'); return false|"-->
-											<tr th:each="m : ${reviewList}" th:onclick="|window.open('@{|/admin/reviewview/${m.getRvIdx()}|}', '@{정보수정}','@{width=850px, height=800px}'); return false|">
+											<tr th:each="m : ${reviewList}" th:onclick="|window.open('@{|/admin/reviewview/${m.getRvIdx()}|}', '@{정보수정}','@{width=700px, height=850px}'); return false|">
 <!--											<tr th:each="m : ${reviewList}" th:onclick="|location.href='@{|/admin/reviewview/${m.getRvIdx()}|}'|">-->
 												<td th:text="${m.rvIdx}"></td>
 												<td th:text="${m.userIdx}"></td>

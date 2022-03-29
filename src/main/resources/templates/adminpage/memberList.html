@@ -458,7 +458,7 @@
 
 
 <!--				<tr th:each="m : ${UserList}" th:onclick="|location.href='@{|/admin/memberview/${m.getUserIdx()}|}'|">-->
-				<tr th:each="m : ${UserList}" th:onclick="|window.open('@{|/admin/memberview/${m.getUserIdx()}|}', '@{정보수정}','@{width=850px, height=800px}'); return false|">
+				<tr th:each="m : ${UserList}" th:onclick="|window.open('@{|/admin/memberview/${m.getUserIdx()}|}', '@{정보수정}','@{width=700px, height=700px}'); return false|">
 					<td th:text="${m.userIdx}"></td>
 					<td th:text="${m.userName}">x</td>
 					<td th:text="${m.userUserid}">x</td>

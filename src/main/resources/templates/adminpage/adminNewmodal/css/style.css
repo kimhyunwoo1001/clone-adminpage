@@ -24,3 +24,6 @@ a{text-decoration:none; color:inherit; cursor:pointer;}
 				line-height:25px; margin-top:10px; margin-left:535px;
 				border:1px solid gray; border-radius:3px; }*/
 .mlp .popup .close:hover{ font-weight:bold; color:red; }
+#content {
+    padding-top: 5px;
+}

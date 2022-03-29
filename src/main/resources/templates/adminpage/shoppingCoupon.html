@@ -320,7 +320,9 @@
 
 			<div class="headerbar-right">
 				<ul class="header-nav header-nav-options _option_list">
-					<li class="hidden-xs"><a class="btn btn-primary" th:href="@{/admin/couponfix}">쿠폰 만들기</a></li>
+<!--					<tr th:each="m : ${couponList}" th:onclick="|window.open('@{|/admin/couponview/${m.getCpIdx()}|}', '@{정보수정}','@{width=700px, height=800px}'); return false|">-->
+<!--					<li class="hidden-xs"><a class="btn btn-primary" th:href="@{/admin/couponfix}">쿠폰 만들기</a></li>-->
+					<li class="hidden-xs"><a class="btn btn-primary" th:onclick="|window.open('@{|/admin/couponfix|}', '@{정보수정}','@{width=800px, height=500px}'); return false|">쿠폰 만들기</a></li>
 					<li class="hidden-md hidden-lg hidden-sm">
 						<button class="btn btn-flat" aria-expanded="false" aria-haspopup="true"
 								data-toggle="dropdown" type="button" id="dLabel" style="padding: 4px 8px;">
@@ -385,7 +387,7 @@
 											</thead>
 
 											<tbody>
-											<tr th:each="m : ${couponList}" th:onclick="|window.open('@{|/admin/couponview/${m.getCpIdx()}|}', '@{정보수정}','@{width=850px, height=800px}'); return false|">
+											<tr th:each="m : ${couponList}" th:onclick="|window.open('@{|/admin/couponview/${m.getCpIdx()}|}', '@{정보수정}','@{width=700px, height=820px}'); return false|">
 <!--											<tr th:each="m : ${couponList}" th:onclick="|location.href='@{|/admin/couponview/${m.getCpIdx()}|}'|">-->
 												<td th:text="${m.cpIdx}"></td>
 												<td th:text="${m.cpDiscount}"></td>

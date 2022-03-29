@@ -435,7 +435,7 @@
 												<tbody>
 
 <!--												<tr th:each="m : ${dpointList}" th:onclick="|location.href='@{|/admin/dpointview/${m.getDpIdx()}|}'|">-->
-												<tr th:each="m : ${dpointList}" th:onclick="|window.open('@{|/admin/dpointview/${m.getDpIdx()}|}', '@{정보수정}','@{width=850px, height=800px}'); return false|">
+												<tr th:each="m : ${dpointList}" th:onclick="|window.open('@{|/admin/dpointview/${m.getDpIdx()}|}', '@{정보수정}','@{width=700px, height=640px}'); return false|">
 													<td th:text="${m.dpIdx}"></td>
 													<td th:text="${#temporals.format(m.dpRegdate, 'yyyy-MM-dd')}"></td>
 													<td th:text="${#temporals.format(m.dpEnddate, 'yyyy-MM-dd')}"></td>
