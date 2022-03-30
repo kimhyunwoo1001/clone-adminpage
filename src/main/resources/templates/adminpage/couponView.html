@@ -1236,12 +1236,12 @@
 			,data : JSON.stringify(data)
 			,contentType: 'application/json'
 			,success : function(result) {
-				alert("수정 성공");
+				alert("쿠폰 정보가 수정되었습니다.");
 				window.opener.location.reload();
 				location.href = window.close();
 			},
 			error: function(request, status, error) {
-				alert('수정 완료')
+				alert('쿠폰 정보가 수정되었습니다.')
 				window.opener.location.reload();
 				location.href = window.close();
 			}
@@ -1258,12 +1258,12 @@
 			,dataType : 'json'
 			,contentType: 'application/json'
 			,success : function(result) {
-				alert("삭제 성공");
+				alert("쿠폰이 삭제되었습니다.");
 				window.opener.location.reload();
 				location.href = window.close();
 			},
 			error: function(request, status, error) {
-				alert("삭제 완료");
+				alert("쿠폰이 삭제되었습니다.");
 				window.opener.location.reload();
 				location.href = window.close();
 			}

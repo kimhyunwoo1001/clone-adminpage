@@ -848,12 +848,14 @@
 				,data : JSON.stringify(data)
 				,contentType: 'application/json'
 				,success : function(result) {
-					alert("등록 성공");
-					location.href = "/admin/memberlist";
+					alert("회원 등록이 성공하였습니다.");
+					window.opener.location.reload();
+					location.href = window.close();
 				},
 				error: function(request, status, error) {
-					alert("등록 완료");
-					location.href = "/admin/memberlist";
+					alert("회원 등록이 성공하였습니다.");
+					window.opener.location.reload();
+					location.href = window.close();
 				}
 			})
 		}
@@ -899,10 +901,13 @@
 					contentType: "application/json; charset=utf-8", //MIME 타입
 					dataType: "json" //응답 데이터
 				}).done(function(res) {
-					alert("등록 성공");
-					location.href = "/admin/memberlist";
+					alert("회원 등록이 성공하였습니다.");
+					window.opener.location.reload();
+					location.href = window.close();
 				}).fail(function(err) {
 					alert(JSON.stringify(err));
+					window.opener.location.reload();
+					location.href = window.close();
 				});
 			}
 		}

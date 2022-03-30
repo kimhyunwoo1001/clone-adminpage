@@ -1013,8 +1013,6 @@
 				cpLimitprice: $("#cpLimitprice").val(),
 			}
 			console.log(data);
-			alert("등록 완료");
-			location.href = "/admin/coupon";
 			$.ajax({
 				type : 'POST'
 				,url : "/coupon/new/"+$("#userIdx").val()
@@ -1022,12 +1020,12 @@
 				,data : JSON.stringify(data)
 				,contentType: 'application/json'
 				,success : function(result) {
-					alert("등록 완료");
+					alert("쿠폰이 등록되었습니다.");
 					window.opener.location.reload();
 					location.href = window.close();
 				},
 				error: function(request, status, error) {
-					alert("등록 완료");
+					alert("쿠폰이 등록되었습니다.");
 					window.opener.location.reload();
 					location.href = window.close();
 				}

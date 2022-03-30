@@ -1216,11 +1216,13 @@
       ,contentType: 'application/json'
       ,success : function(result) {
         alert("등록 성공");
-        location.href = "/admin/notice";
+        window.opener.location.reload();
+        location.href = window.close();
       },
       error: function(request, status, error) {
         alert("등록 완료");
-        location.href = "/admin/notice";
+        window.opener.location.reload();
+        location.href = window.close();
       }
     })
   }
