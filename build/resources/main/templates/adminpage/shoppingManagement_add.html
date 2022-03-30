@@ -643,8 +643,9 @@ table{
 				contentType: "application/json; charset=utf-8", //MIME 타입
 				dataType: "json" //응답 데이터
 			}).done(function(res) {
-				alert("등록 성공");
-				location.href = "/admin/management";
+				alert("상품 등록이 완료되었습니다.");
+				window.opener.location.reload();
+				location.href = window.close();
 			}).fail(function(err) {
 				alert(JSON.stringify(err));
 			});
