@@ -593,7 +593,7 @@
 							</div>
 						</div>
 					</div>
-					<input type="button" id="btn-save" value="수정완료" class="btn btn-primary" onclick="modifySubmit()">
+<!--					<input type="button" id="btn-save" value="수정완료" class="btn btn-primary" onclick="modifySubmit()">-->
 <!--					<input type="hidden" id="method" name="_method"/>-->
 					<input type="button" id="delete" value="회원삭제" class="btn btn-default-bright" onclick="deleteSubmit()">
 					<span th:value="${view.getData().getUserIdx()}" id="userIdx"></span>
@@ -1303,12 +1303,12 @@
 			,dataType : 'json'
 			,contentType: 'application/json'
 			,success : function(result) {
-				alert("삭제 성공");
+				alert("회원정보가 삭제되었습니다.");
 				window.opener.location.reload();
 				location.href = window.close();
 			},
 			error: function(request, status, error) {
-				alert("삭제 완료");
+				alert("회원정보가 삭제되었습니다.");
 				window.opener.location.reload();
 				location.href = window.close();
 			}
